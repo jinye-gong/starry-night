@@ -136,11 +136,13 @@ h1 {
 .sky-memory { margin: 64px auto 0; }
 .sky-memory:nth-of-type(2) { margin-top: 76px; }
 .sky-memory:nth-of-type(3) { margin-top: 108px; }
+.sky-memory:nth-of-type(4) { margin-top: 96px; }
 .sky-memory h3 { font-size: 22px; font-weight: 400; letter-spacing: .14em; line-height: 1.8; }
 .sky-date { margin-top: 10px; font: 11px / 2 var(--sans); letter-spacing: .1em; color: var(--muted); }
 .sky-chart { width: 100%; max-width: 430px; height: auto; margin: 18px auto 0; }
 .sky-memory:nth-of-type(2) .sky-chart { max-width: 372px; }
 .sky-memory:nth-of-type(3) .sky-chart { max-width: 328px; }
+.sky-memory:nth-of-type(4) .sky-chart { max-width: 300px; }
 .sky-memory figcaption { margin-top: 12px; font-size: 16px; line-height: 2; color: #d2d4d9; letter-spacing: .04em; }
 
 /* The small memory and warm photograph each keep their own proportions. */
@@ -198,10 +200,12 @@ h1 {
   .sky-memory { margin-top: 48px; }
   .sky-memory:nth-of-type(2) { margin-top: 56px; }
   .sky-memory:nth-of-type(3) { margin-top: 80px; }
+  .sky-memory:nth-of-type(4) { margin-top: 72px; }
   .sky-memory h3 { font-size: 20px; }
   .sky-chart { max-width: 350px; }
   .sky-memory:nth-of-type(2) .sky-chart { max-width: 300px; }
   .sky-memory:nth-of-type(3) .sky-chart { max-width: 268px; }
+  .sky-memory:nth-of-type(4) .sky-chart { max-width: 248px; }
   .sky-memory figcaption { font-size: 15px; }
   .ending { padding: 28px 24px 76px; }
   .ending-copy { font-size: 20px; margin-top: 34px; }
