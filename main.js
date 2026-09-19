@@ -63,3 +63,17 @@
     showAll();
   }
 })();
+
+// City selection is native HTML/CSS; JavaScript only adds a quiet fade.
+(() => {
+  const gallery = document.querySelector('.sky-gallery');
+  if (!gallery) return;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  gallery.addEventListener('change', event => {
+    if (!event.target.matches('.sky-choice')) return;
+    const panel = document.getElementById(event.target.getAttribute('aria-controls'));
+    if (panel && !reducedMotion.matches && typeof panel.animate === 'function') {
+      panel.animate([{ opacity: 0.25 }, { opacity: 1 }], { duration: 450, easing: 'ease-out' });
+    }
+  });
+})();

@@ -8,8 +8,8 @@
   <title>那天晚上的星空</title>
   <meta name="description" content="有一片星空，想和你再看一次。">
   <link rel="icon" type="image/svg+xml" href="star.svg">
-  <link rel="stylesheet" href="styles.css?v=695bce36d2bd">
-  <script src="main.js?v=f795479282b8" defer></script>
+  <link rel="stylesheet" href="styles.css?v=bbee1664181d">
+  <script src="main.js?v=35527621d744" defer></script>
 </head>
 <body>
   <main>
@@ -56,7 +56,7 @@
           </div>
         </div>
         <div class="letter-signature reveal">
-          <p class="signature">—— 龚金烨</p>
+          <p class="signature">—— 大屁猪</p>
         </div>
       </article>
 
@@ -73,14 +73,40 @@
       <div class="sky-content">
         <header class="reveal">
           <h2 id="sky-title">那天晚上</h2>
-          <p class="sky-date">约 2026.03.26 · 21:00 · 成都</p>
         </header>
-        <figure class="sky-figure reveal">
-          <div class="sky-chart">
-            <img src="sky.svg" width="860" height="860" alt="2026年3月26日约晚上九点，成都上空的圆形星图。" loading="lazy">
+        <fieldset class="sky-gallery reveal">
+          <legend class="visually-hidden">选择一起看过星空的城市</legend>
+          <input class="sky-choice visually-hidden" type="radio" name="sky-place" id="sky-chengdu" value="chengdu" aria-controls="panel-chengdu" checked>
+          <label class="sky-place" for="sky-chengdu">成都</label>
+          <input class="sky-choice visually-hidden" type="radio" name="sky-place" id="sky-dali" value="dali" aria-controls="panel-dali">
+          <label class="sky-place" for="sky-dali">大理</label>
+          <input class="sky-choice visually-hidden" type="radio" name="sky-place" id="sky-kobe" value="kobe" aria-controls="panel-kobe">
+          <label class="sky-place" for="sky-kobe">神户</label>
+          <div class="sky-panels" aria-live="polite" aria-atomic="true">
+            <div class="sky-panel" id="panel-chengdu" role="region" aria-label="成都的星空">
+              <p class="sky-date">约 2026.03.26 · 21:00 · 成都</p>
+              <figure class="sky-figure">
+                <div class="sky-chart"><img src="sky.svg" width="860" height="860" alt="2026年3月26日约21点，成都上空的圆形星图，北上东左。" loading="lazy"></div>
+                <figcaption>那一刻，星星的位置。</figcaption>
+              </figure>
+            </div>
+            <div class="sky-panel" id="panel-dali" role="region" aria-label="大理的星空">
+              <p class="sky-date">2026.06.08 · 21:00 · 大理</p>
+              <figure class="sky-figure">
+                <div class="sky-chart"><img src="sky-dali.svg" width="860" height="860" alt="2026年6月8日当地时间21点，大理上空的圆形星图，北上东左。" loading="lazy"></div>
+                <figcaption>那一刻，星星的位置。</figcaption>
+              </figure>
+            </div>
+            <div class="sky-panel" id="panel-kobe" role="region" aria-label="神户的星空">
+              <p class="sky-date">2026.08.29 · 20:00 · 神户</p>
+              <figure class="sky-figure">
+                <div class="sky-chart"><img src="sky-kobe.svg" width="860" height="860" alt="2026年8月29日当地时间20点，神户上空的圆形星图，北上东左。" loading="lazy"></div>
+                <figcaption>那一刻，星星的位置。</figcaption>
+              </figure>
+            </div>
           </div>
-          <figcaption>那一刻，星星的位置。</figcaption>
-        </figure>
+          <p class="sky-note">当地时间 · 按城市位置还原</p>
+        </fieldset>
       </div>
     </section>
 
