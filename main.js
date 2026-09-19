@@ -54,16 +54,18 @@
           // Never hold the final page indefinitely for a slow image request.
           await Promise.race([photo.decode().catch(() => {}), pause(2500)]);
           if (cancelled) return;
-          await pause(350);
+          await pause(180);
           if (cancelled) return;
-          memoryFade = memory.animate([{ opacity: .45 }, { opacity: 0 }], {
-            duration: 700, easing: 'ease-out', fill: 'forwards'
+          // Memory starts fading; the warm photo overlaps ~350ms in —
+          // “memory becoming now,” not wait-then-appear.
+          memoryFade = memory.animate([{ opacity: .28 }, { opacity: 0 }], {
+            duration: 900, easing: 'ease-out', fill: 'forwards'
           });
-          await memoryFade.finished;
-          await pause(500);
+          await pause(350);
           if (cancelled) return;
           ending.classList.add('is-finished');
           ending.classList.remove('is-staged');
+          await memoryFade.finished.catch(() => {});
           memoryFade.cancel();
         } catch {
           showAll();
