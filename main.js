@@ -54,14 +54,13 @@
           // Never hold the final page indefinitely for a slow image request.
           await Promise.race([photo.decode().catch(() => {}), pause(2500)]);
           if (cancelled) return;
-          await pause(180);
+          await pause(80);
           if (cancelled) return;
-          // Memory starts fading; the warm photo overlaps ~350ms in —
-          // “memory becoming now,” not wait-then-appear.
-          memoryFade = memory.animate([{ opacity: .28 }, { opacity: 0 }], {
-            duration: 900, easing: 'ease-out', fill: 'forwards'
+          // Silhouette starts fading; warm photo overlaps ~300ms in.
+          memoryFade = memory.animate([{ opacity: .26 }, { opacity: 0 }], {
+            duration: 780, easing: 'ease-out', fill: 'forwards'
           });
-          await pause(350);
+          await pause(300);
           if (cancelled) return;
           ending.classList.add('is-finished');
           ending.classList.remove('is-staged');
