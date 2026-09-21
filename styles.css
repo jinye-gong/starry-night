@@ -164,12 +164,17 @@ h1 {
 .ending-photo img { width: 100%; height: auto; }
 .ending-copy { max-width: 620px; margin: 42px auto 0; font-size: 23px; line-height: 1.95; text-wrap: balance; }
 .ending-copy h2 { margin-top: 32px; font-size: inherit; line-height: inherit; font-weight: 400; }
-.ending.is-staged .ending-photo, .ending.is-staged .ending-copy { opacity: 0; }
+.ending.is-staged .ending-photo {
+  opacity: .16;
+  filter: blur(2px);
+}
+.ending.is-staged .ending-copy { opacity: 0; }
 .ending.is-finished .ending-memory img { opacity: 0; }
 .ending.is-finished .ending-photo,
 .ending.is-finished .ending-copy {
   opacity: 1;
-  transition: opacity .7s ease;
+  filter: none;
+  transition: opacity .65s ease, filter .65s ease;
 }
 
 .reveal { transition: opacity .8s ease; }
@@ -220,6 +225,7 @@ h1 {
   html { scroll-behavior: auto; }
   .reveal, .ending.is-finished .ending-photo, .ending.is-finished .ending-copy { transition: none; }
   .reveal.is-pending, .ending.is-staged .ending-photo, .ending.is-staged .ending-copy { opacity: 1; }
+  .ending.is-staged .ending-photo { filter: none; }
 }
 @media print {
   .reveal.is-pending, .ending.is-staged .ending-photo, .ending.is-staged .ending-copy { opacity: 1; }

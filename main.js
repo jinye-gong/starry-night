@@ -51,16 +51,16 @@
       endingObserver.disconnect();
       (async () => {
         try {
-          // Never hold the final page indefinitely for a slow image request.
-          await Promise.race([photo.decode().catch(() => {}), pause(2500)]);
+          // The small WebP is preloaded; this timeout only covers a failed decode.
+          await Promise.race([photo.decode().catch(() => {}), pause(600)]);
           if (cancelled) return;
-          await pause(80);
+          await pause(40);
           if (cancelled) return;
-          // Silhouette starts fading; warm photo overlaps ~300ms in.
+          // The warm photo is already faintly present, so the page never goes blank.
           memoryFade = memory.animate([{ opacity: .26 }, { opacity: 0 }], {
-            duration: 780, easing: 'ease-out', fill: 'forwards'
+            duration: 520, easing: 'ease-out', fill: 'forwards'
           });
-          await pause(300);
+          await pause(160);
           if (cancelled) return;
           ending.classList.add('is-finished');
           ending.classList.remove('is-staged');
