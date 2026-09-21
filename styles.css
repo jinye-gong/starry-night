@@ -144,6 +144,13 @@ h1 {
 .sky-memory:nth-of-type(3) .sky-chart { max-width: 328px; }
 .sky-memory:nth-of-type(4) .sky-chart { max-width: 300px; }
 .sky-memory figcaption { margin-top: 12px; font-size: 16px; line-height: 2; color: #d2d4d9; letter-spacing: .04em; }
+.memory-turn {
+  margin: 82px auto -54px;
+  color: #7f8da2;
+  font-size: 13px;
+  line-height: 2;
+  letter-spacing: .16em;
+}
 
 /* The small memory and warm photograph each keep their own proportions. */
 .ending {
@@ -212,6 +219,7 @@ h1 {
   .sky-memory:nth-of-type(3) .sky-chart { max-width: 268px; }
   .sky-memory:nth-of-type(4) .sky-chart { max-width: 248px; }
   .sky-memory figcaption { font-size: 15px; }
+  .memory-turn { margin-top: 66px; margin-bottom: -42px; font-size: 12px; }
   .ending { padding: 28px 24px 76px; }
   .ending-copy { font-size: 20px; margin-top: 34px; }
   .ending-copy h2 { margin-top: 28px; }
