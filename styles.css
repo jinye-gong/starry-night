@@ -106,11 +106,12 @@ h1 {
 }
 /* A letter, set in natural paragraphs. */
 .letter-section { background: var(--paper); color: var(--ink); padding-top: 100px; }
-.letter-lead { max-width: 590px; margin: 0 auto 64px; padding: 0 28px; font-size: 22px; line-height: 1.9; text-align: center; }
 .letter { max-width: 646px; padding: 0 28px; margin: auto; }
 .letter-salutation { margin-bottom: 30px; font-size: 18px; }
 .letter-body { font-size: 18px; line-height: 2.05; letter-spacing: .02em; overflow-wrap: break-word; }
 .letter-body > div + div, .letter-body p + p { margin-top: 26px; }
+.letter-body .letter-closing { margin-top: 48px; }
+.letter-body .letter-closing p + p { margin-top: 6px; }
 .letter-signature { margin-top: 38px; font-size: 17px; line-height: 2; }
 .signature { text-align: right; }
 .letter-dusk {
@@ -200,7 +201,6 @@ h1 {
   h1 { font-size: 28px; line-height: 1.85; }
   .scroll-cue { bottom: 14px; left: 0; right: 0; justify-content: center; font-size: 11px; }
   .letter-section { padding-top: 72px; }
-  .letter-lead { font-size: 20px; margin-bottom: 46px; }
   .letter-body { font-size: 17px; line-height: 2; letter-spacing: .01em; }
   .letter-salutation { font-size: 17px; }
   .letter-body > div + div, .letter-body p + p { margin-top: 24px; }
