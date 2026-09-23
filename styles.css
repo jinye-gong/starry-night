@@ -167,14 +167,15 @@ h1 {
   background: linear-gradient(var(--night), #40526e 42%, #d6dbe6 72%, var(--paper));
 }
 .letter-after .letter { padding-top: 88px; }
+.letter-after .letter-passage + .letter-passage { margin-top: 82px; }
 .all-you {
-  min-height: 82svh;
+  min-height: 88svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 42px;
-  margin-top: 90px;
+  margin-top: 150px;
   text-align: center;
   color: var(--ink);
   font-size: 18px;
@@ -186,7 +187,7 @@ h1 {
   font-size: 27px;
   letter-spacing: .16em;
 }
-.letter-finale { padding: 220px 0 150px; }
+.letter-finale { padding: 240px 0 150px; }
 .letter-closing { font-size: 18px; line-height: 2.1; }
 .letter-closing p + p { margin-top: 6px; }
 
@@ -232,9 +233,10 @@ h1 {
   .past-realization { margin-top: 108px; padding-bottom: 138px; font-size: 17px; }
   .letter-after::before { height: 210px; }
   .letter-after .letter { padding-top: 66px; }
-  .all-you { min-height: 78svh; margin-top: 64px; font-size: 17px; gap: 34px; }
+  .letter-after .letter-passage + .letter-passage { margin-top: 66px; }
+  .all-you { min-height: 84svh; margin-top: 110px; font-size: 17px; gap: 34px; }
   .all-you-line { font-size: 25px; }
-  .letter-finale { padding: 190px 0 116px; }
+  .letter-finale { padding: 210px 0 116px; }
   .letter-closing { font-size: 17px; }
   .ending { padding: 0 20px 76px; }
 }
