@@ -1,21 +1,12 @@
 (() => {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const reveals = [...document.querySelectorAll('.reveal')];
-  const ending = document.querySelector('.ending');
   let revealObserver;
-  let endingObserver;
-  let cancelled = false;
-  let memoryFade;
 
   const showAll = () => {
-    cancelled = true;
-    memoryFade?.cancel();
     reveals.forEach(el => el.classList.remove('is-pending'));
-    ending?.classList.remove('is-staged');
     revealObserver?.disconnect();
-    endingObserver?.disconnect();
   };
-  const pause = ms => new Promise(resolve => window.setTimeout(resolve, ms));
 
   if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
 
@@ -41,37 +32,6 @@
         revealObserver.observe(el);
       }
     });
-
-    const memory = ending?.querySelector('.ending-memory img');
-    const photo = ending?.querySelector('.ending-photo img');
-    if (!memory || !photo || typeof memory.animate !== 'function') return;
-    ending.classList.add('is-staged');
-    endingObserver = new IntersectionObserver(entries => {
-      if (!entries.some(entry => entry.isIntersecting)) return;
-      endingObserver.disconnect();
-      (async () => {
-        try {
-          // The small WebP is preloaded; this timeout only covers a failed decode.
-          await Promise.race([photo.decode().catch(() => {}), pause(600)]);
-          if (cancelled) return;
-          await pause(40);
-          if (cancelled) return;
-          // The warm photo is already faintly present, so the page never goes blank.
-          memoryFade = memory.animate([{ opacity: .26 }, { opacity: 0 }], {
-            duration: 520, easing: 'ease-out', fill: 'forwards'
-          });
-          await pause(160);
-          if (cancelled) return;
-          ending.classList.add('is-finished');
-          ending.classList.remove('is-staged');
-          await memoryFade.finished.catch(() => {});
-          memoryFade.cancel();
-        } catch {
-          showAll();
-        }
-      })();
-    }, { threshold: 0 });
-    endingObserver.observe(ending.querySelector('.ending-memory'));
   } catch {
     showAll();
   }
